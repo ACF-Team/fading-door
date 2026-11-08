@@ -14,36 +14,6 @@ TOOL.ClientConVar["opensound"] = "0"
 TOOL.ClientConVar["loopsound"] = "0"
 TOOL.ClientConVar["closesound"] = "0"
 
-list.Add("FDoorMaterials", "sprites/heatwave")
-list.Add("FDoorMaterials", "models/wireframe")
-list.Add("FDoorMaterials", "debug/env_cubemap_model")
-list.Add("FDoorMaterials", "models/shadertest/shader3")
-list.Add("FDoorMaterials", "models/shadertest/shader4")
-list.Add("FDoorMaterials", "models/shadertest/shader5")
-list.Add("FDoorMaterials", "models/shiny")
-list.Add("FDoorMaterials", "models/debug/debugwhite")
-list.Add("FDoorMaterials", "Models/effects/comball_sphere")
-list.Add("FDoorMaterials", "Models/effects/comball_tape")
-list.Add("FDoorMaterials", "Models/effects/splodearc_sheet")
-list.Add("FDoorMaterials", "Models/effects/vol_light001")
-list.Add("FDoorMaterials", "models/props_combine/stasisshield_sheet")
-list.Add("FDoorMaterials", "models/props_combine/portalball001_sheet")
-list.Add("FDoorMaterials", "models/props_combine/com_shield001a")
-list.Add("FDoorMaterials", "models/props_c17/frostedglass_01a")
-list.Add("FDoorMaterials", "models/props_lab/Tank_Glass001")
-list.Add("FDoorMaterials", "models/props_combine/tprings_globe")
-list.Add("FDoorMaterials", "models/rendertarget")
-list.Add("FDoorMaterials", "models/screenspace")
-list.Add("FDoorMaterials", "brick/brick_model")
-list.Add("FDoorMaterials", "models/props_pipes/GutterMetal01a")
-list.Add("FDoorMaterials", "models/props_pipes/Pipesystem01a_skin3")
-list.Add("FDoorMaterials", "models/props_wasteland/wood_fence01a")
-list.Add("FDoorMaterials", "models/props_foliage/tree_deciduous_01a_trunk")
-list.Add("FDoorMaterials", "models/props_c17/FurnitureFabric003a")
-list.Add("FDoorMaterials", "models/props_c17/FurnitureMetal001a")
-list.Add("FDoorMaterials", "models/props_c17/paper01")
-list.Add("FDoorMaterials", "models/flesh")
-
 if SERVER then
 	util.AddNetworkString("DrawFadeDoor")
 end
@@ -135,7 +105,7 @@ if CLIENT then
 
 		self:AddItem(left, DoorCloseSound)
 		self:AddControl("Numpad", {Label = "Button", ButtonSize = "22", Command = "fading_door_key"})
-		self:MatSelect("fading_door_mat", list.Get("FDoorMaterials"), true, 0.33, 0.33)
+		self:MatSelect("fading_door_mat", list.Get("OverrideMaterials"), true, 0.33, 0.33)
 	end
 
 	local EFFECT = {}
